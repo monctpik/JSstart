@@ -71,6 +71,7 @@ const newArr1 = users
   });
 
 // console.table(newArr1)
+//
 
 // const fullName = users.filter(function (user) {
 //       return user.age < AGE_FILTER;
