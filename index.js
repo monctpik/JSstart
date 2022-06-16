@@ -1,16 +1,27 @@
 "use strict";
 
-const words = ['a','e','i', 'o', 'u','y'];
 
 
-const vowels = words => Array.from(words)
-  .filter(letter => 'aeiouy'.includes(letter)).length
+
+
+
+
+
+
+
+
+
+
+// const words = ['a','e','i', 'o', 'u','y'];
+
+// const vowels = words => Array.from(words)
+//   .filter(letter => 'aeiouy'.includes(letter)).length
 
 //   console.log(vowels(words))
 // const letter = 'a'
 // const vowels = (str,separator='', arr = ['a','e','i', 'o', 'u','y']) => str.toLowerCase.split(separator).filter((letter) => arr.includes(letter)).length
 
-console.log(vowels(words))
+// console.log(vowels(words))
 
 // const str = "to    Be    or NoT     To    bE";
 // const toJadenCase = (str, separator = " ") =>
@@ -21,11 +32,6 @@ console.log(vowels(words))
 //     .join(" ");
 
 // console.log(toJadenCase(str));
-
-
-
-
-
 
 // /**
 //  *
