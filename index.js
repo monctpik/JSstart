@@ -1,108 +1,74 @@
-/**
- *
- * @param {string} fname
- * @param {string} lname
- * @param {number} age
- * @param {boolean} isMale
- * @param {string} email
- * @param {boolean} isSubscribed
- */
-function User(fname, lname, age, isMale, email, isSubscribed = false) {
-  this.fname = fname;
-  this.lname = lname;
-  this.age = age;
-  this.isMale = isMale;
-  this.email = email;
-  this.isSubscribed = isSubscribed;
-}
+"use strict";
 
-function UserPrototype() {
-  this.fullName = function () {
-    return `${this.fname} ${this.lname}`;
-  };
-}
-User.prototype = new UserPrototype();
+const words = ['a','e','i', 'o', 'u','y'];
 
-function createUsers(amount = 1) {
-  const arrUsers = [];
-  for (let i = 0; i < amount; i++) {
-    const user = new User(
-      `Elon${i}`,
-      `Musk${i}`,
-      Math.ceil(Math.random() * (60 - 20) + 20),
-      Math.random() > 0.5,
-      `emailEM${i}@gmail.com`
-    );
-    arrUsers.push(user);
-  }
 
-  return arrUsers;
-}
-const users = createUsers(20);
-console.table(users);
+const vowels = words => Array.from(words)
+  .filter(letter => 'aeiouy'.includes(letter)).length
 
-const arrFullName = users.map(function (user) {
-  return user.fullName();
-});
-// console.table(arrFullName)
-const ageOlder = users.filter(function (user) {
-  return user.age > AGE_FILTER;
-});
-// console.table(ageOlder)
+//   console.log(vowels(words))
+// const letter = 'a'
+// const vowels = (str,separator='', arr = ['a','e','i', 'o', 'u','y']) => str.toLowerCase.split(separator).filter((letter) => arr.includes(letter)).length
 
-users.forEach(function (user) {
-  user.isSubscribed = Math.random() > 0.5;
-});
+console.log(vowels(words))
 
-console.table(users);
+// const str = "to    Be    or NoT     To    bE";
+// const toJadenCase = (str, separator = " ") =>
+//   str
+//     .split(separator)
+//     .filter((word)=> word)
+//     .map((word) => word.at(0).toUpperCase() + word.slice(1).toLowerCase())
+//     .join(" ");
 
-const newArr1 = users
-  .filter(function (user) {
-    return user.age < AGE_FILTER;
-  })
-  .filter(function (user) {
-    return user.isMale === false;
-  })
-  .filter(function (user) {
-    return user.isSubscribed;
-  })
-  .map(function (user) {
-    return user.email;
-  });
+// console.log(toJadenCase(str));
 
-// console.table(newArr1)
-//
 
-// const fullName = users.filter(function (user) {
-//       return user.age < AGE_FILTER;
+
+
+
+
+// /**
+//  *
+//  * @param {number} a
+//  * @param {number} b
+//  * @returns number
+//  */
+// const biggerNumber = (a, b) => (a > b ? a : b);
+// console.log(biggerNumber(5, 11));
+
+// const power = (num1,num2) =>{
+//   if(num2 === 0){
+//     return 1
+//   }
+//   return num1 * power(num1, num2 - 1)
+// }
+
+// console.log(power(3,2))
+
+// const sum = (a, b) => {
+//   return a + b;
+// };
+
+// const vowels = ['a','o', 'i'];
+// const consonants = ['b', 'p', 'w'];
+// const vowelsConsonants = [...vowels, ...consonants];
+// console.log(vowelsConsonants);
+
+// const sum = (...num) => num.reduce((acum, vol) => acum + vol);
+// sum(1,2,4,5,6,1);
+
+// const arrNumbers = [1,2,3,4,5,6]
+// sum(...arrNumbers)
+
+// const site = {
+//   title: 'green site',
+//   headers: ['Header 1', 'Header 2', 'Header 3'],
+//   showHeaders(){
+//     console.log(this)
+//     this.headers.forEach((header)=>{
+//       console.log(`${header} | ${this.title} ` )
 //     })
-//     .filter(function (user) {
-//       return user.isMale;
-//     })
-//     .filter(function (user) {
-//       return user.isSubscribed === false;
-//     })
-//     .map(function(user){
-//       return user.fullName()});
-// console.table(fullName);
+//   }
+// }
 
-// const summAge = users.reduce(function(result, user){
-//   return result + user.age
-// })
-// console.log(summAge)
-
-const fullName = users.filter(function (user) {
-  return user.age < AGE_FILTER;
-})
-.filter(function (user) {
-  return user.isMale;
-})
-.filter(function (user) {
-  return user.isSubscribed === false;
-})
-console.table(fullName)
-
-const summAge = fullName.reduce(function(result, user){
-  return result + user.age
-},0)
-console.log(summAge)
+// site.showHeaders()
